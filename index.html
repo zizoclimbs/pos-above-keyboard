@@ -51,8 +51,10 @@
       function resizeHandler() {
         if (!/iPhone|iPad|iPod/.test(window.navigator.userAgent)) {
           height = viewport.height;
+          // button.style.bottom = `10px`;
+        } else {
+          button.style.bottom = `${height - viewport.height + 10}px`;
         }
-        button.style.bottom = `${height - viewport.height + 10}px`;
       }
 
       function blurHandler() {
