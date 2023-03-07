@@ -1,63 +1,84 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta
-      name="viewport"
-      content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"
-    />
-    <title>pos-above-keyboard</title>
-    <style>
-      html,
-      body {
-        margin: 0;
-        padding: 0;
-      }
 
-      #button {
-        position: absolute; /*fixed*/
-        width: 100%;
-        bottom: 10px;
-        background-color: rebeccapurple;
-        line-height: 40px;
-        text-align: center;
-      }
-    </style>
-  </head>
-  <body>
-    <input
-      type="text"
-      inputmode="decimal"
-      value="0.99"
-      id="input"
-      
-    /> <!--onblur="blurHandler()"-->
-    <div id="button" >Button</div> <!--onclick="inputBlur()"-->
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+  <title>pos-above-keyboard</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+    }
 
-    <script>
-      // const button = document.getElementById("button");
-      // const input = document.getElementById("input");
-      // let height = window.visualViewport.height;
-      // const viewport = window.visualViewport;
+    body {
+      position: relative;
+      height: 100vh;
+    }
 
-      // window.addEventListener("scroll", inputBlur);
-      // window.visualViewport.addEventListener("resize", resizeHandler);
+    .btn-wrapper {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: flex;
+      align-items: flex-end;
+      z-index: 9;
+    }
 
-      // function inputBlur() {
-      //   input.blur();
-      // }
+    #button {
+      /* position: absolute; */
+      /*fixed*/
+      /* bottom: 0; */
+      width: 100%;
+      bottom: 10px;
+      background-color: rebeccapurple;
+      line-height: 40px;
+      text-align: center;
+    }
 
-      // function resizeHandler() {
-      //   if (!/iPhone|iPad|iPod/.test(window.navigator.userAgent)) {
-      //     height = viewport.height;
-      //   }
-      //   button.style.bottom = `${height - viewport.height + 10}px`;
-      // }
+    #input {
+      position: relative;
+      z-index: 10;
+    }
+  </style>
+</head>
 
-      // function blurHandler() {
-      //   button.style.bottom = "10px";
-      // }
-    </script>
-  </body>
+<body>
+  <input type="text" inputmode="decimal" value="0.99" id="input" />
+  <!--onblur="blurHandler()"-->
+  <div class="btn-wrapper">
+    <div id="button">Button</div>
+    <!--onclick="inputBlur()"-->
+  </div>
+
+  <script>
+    // const button = document.getElementById("button");
+    // const input = document.getElementById("input");
+    // let height = window.visualViewport.height;
+    // const viewport = window.visualViewport;
+
+    // window.addEventListener("scroll", inputBlur);
+    // window.visualViewport.addEventListener("resize", resizeHandler);
+
+    // function inputBlur() {
+    //   input.blur();
+    // }
+
+    // function resizeHandler() {
+    //   if (!/iPhone|iPad|iPod/.test(window.navigator.userAgent)) {
+    //     height = viewport.height;
+    //   }
+    //   button.style.bottom = `${height - viewport.height + 10}px`;
+    // }
+
+    // function blurHandler() {
+    //   button.style.bottom = "10px";
+    // }
+  </script>
+</body>
+
 </html>
