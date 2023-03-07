@@ -16,7 +16,7 @@
       }
 
       #button {
-        position: fixed;
+        position: absolute; /*fixed*/
         width: 100%;
         bottom: 10px;
         background-color: rebeccapurple;
@@ -31,33 +31,33 @@
       inputmode="decimal"
       value="0.99"
       id="input"
-      onblur="blurHandler()"
-    />
-    <div id="button" onclick="inputBlur()">Button</div>
+      
+    /> <!--onblur="blurHandler()"-->
+    <div id="button" >Button</div> <!--onclick="inputBlur()"-->
 
     <script>
-      const button = document.getElementById("button");
-      const input = document.getElementById("input");
-      let height = window.visualViewport.height;
-      const viewport = window.visualViewport;
+      // const button = document.getElementById("button");
+      // const input = document.getElementById("input");
+      // let height = window.visualViewport.height;
+      // const viewport = window.visualViewport;
 
-      window.addEventListener("scroll", inputBlur);
-      window.visualViewport.addEventListener("resize", resizeHandler);
+      // window.addEventListener("scroll", inputBlur);
+      // window.visualViewport.addEventListener("resize", resizeHandler);
 
-      function inputBlur() {
-        input.blur();
-      }
+      // function inputBlur() {
+      //   input.blur();
+      // }
 
-      function resizeHandler() {
-        if (!/iPhone|iPad|iPod/.test(window.navigator.userAgent)) {
-          height = viewport.height;
-        }
-        button.style.bottom = `${height - viewport.height + 10}px`;
-      }
+      // function resizeHandler() {
+      //   if (!/iPhone|iPad|iPod/.test(window.navigator.userAgent)) {
+      //     height = viewport.height;
+      //   }
+      //   button.style.bottom = `${height - viewport.height + 10}px`;
+      // }
 
-      function blurHandler() {
-        button.style.bottom = "10px";
-      }
+      // function blurHandler() {
+      //   button.style.bottom = "10px";
+      // }
     </script>
   </body>
 </html>
